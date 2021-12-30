@@ -2,10 +2,12 @@ package lesson3;
 
 public class Main {
 	public static void main(String[] args) {
-		FuncList funclist = new FuncList();
-		Func1 f1 = FuncList::isOdd;
-		Func2 f2 = funclist::passCheck;
+		Func1 f1 = x -> x % 2 == 1;
+		Func2 f2 = (point, name) -> {
+			return name + "さんは" + ( point > 65 ? "合格" : "不合格" );
+		};
+		
 		System.out.println(f1.call(15));
-		System.out.println(f2.call(65, "pantu"));
+		System.out.println(f2.call(88, "misaki"));
 	}
 }
